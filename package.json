@@ -1,0 +1,21 @@
+{
+  "name": "breakout",
+  "version": "1.0.0",
+  "description": "HTML5 Breakout game",
+  "main": "breakout.js",
+  "scripts": {
+    "html": "cp ./src/index.html ./dist",
+    "js": "cp ./src/breakout.js ./dist",
+    "sass": "node-sass ./src/breakout.sass ./dist/breakout.css --outputStyle expanded --indentWidth 4",
+    "autoprefixer": "autoprefixer-cli ./dist/breakout.css",
+    "build": "npm run html | npm run js | npm run sass && npm run autoprefixer",
+    "watch": "watch 'npm run build' ./src"
+  },
+  "author": "Jay Salvat",
+  "devDependencies": {
+    "autoprefixer": "^6.3.6",
+    "autoprefixer-cli": "^1.0.0",
+    "node-sass": "^3.8.0",
+    "watch": "^0.18.0"
+  }
+}

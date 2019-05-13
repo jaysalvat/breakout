@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P')
+
+html, body
+    overflow: hidden
+    height: 100%
+    margin: 0
+    padding: 0
+    background: #111
+    color: white
+    text-shadow: 0 3px 0 rgba(0,0,0,.4)
+    background: radial-gradient(#333, #000)
+    font: 12px "Press Start 2P"
+    cursor: crosshair
+
+#breakout
+    cursor: none
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    width: 400px
+    overflow: hidden
+    box-shadow: 0 50px 100px rgba(0, 0, 0, .9)
+    border: 1px solid rgba(255, 255, 255, .2)
+
+#game
+    background: linear-gradient(#ff0084, #33001b)
+
+#score,
+#highscore
+    position: absolute
+    top: 15px
+
+#score
+    left: 10px
+
+#highscore
+    right: 10px
+
+
+#lives
+    position: absolute
+    bottom: 10px
+    right: 10px
+
+    span
+        font-size: 8px
+
+.message
+    position: absolute
+    left: 0
+    bottom: 150px
+    right: 0
+    text-align: center
+    opacity: 0
+    transform: translateY(100px) scale(0)
+    transition: .25s all
+
+    h2
+        font-size: 16px
+
+
+    &.gameover h2
+        font-size: 24px
+
+    &.start
+      bottom: 300px
+      opacity: 1
+      transform: translateY(0) scale(1)
+
+    .message-shown
+        opacity: 1
+        transform: translateY(0) scale(1)
+
