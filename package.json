@@ -6,16 +6,18 @@
   "scripts": {
     "html": "cp ./src/index.html ./dist",
     "js": "cp ./src/breakout.js ./dist",
-    "sass": "node-sass ./src/breakout.sass ./dist/breakout.css --outputStyle expanded --indentWidth 4",
-    "autoprefixer": "autoprefixer-cli ./dist/breakout.css",
+    "sass": "sass ./src/breakout.sass:./dist/breakout.css --style expanded",
+    "autoprefixer": "postcss ./dist/*.css -u autoprefixer   -d ./dist",
     "build": "npm run html | npm run js | npm run sass && npm run autoprefixer",
     "watch": "watch 'npm run build' ./src"
   },
   "author": "Jay Salvat",
   "devDependencies": {
-    "autoprefixer": "^6.3.6",
-    "autoprefixer-cli": "^1.0.0",
-    "node-sass": "^3.8.0",
     "watch": "^0.18.0"
+  },
+  "dependencies": {
+    "autoprefixer": "^6.7.7",
+    "postcss-cli": "^8.3.1",
+    "sass": "^1.32.8"
   }
 }
